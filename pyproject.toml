@@ -1,0 +1,13 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "numerical-recipes-physics"
+version = "0.1.0"
+description = "Foundational numerical routines in physics (ODEs, eigenvalues, PDEs, FFT, Monte Carlo, stochastic, optimization) with verification-first tests, spanning mechanics, EM, quantum, stat-mech, and molecular physics."
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
