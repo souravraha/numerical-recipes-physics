@@ -40,7 +40,8 @@ if [[ $# -gt 0 ]]; then
   for name in "$@"; do run "$name"; done
 else
   for name in bh_shadow ising_fss gp_vortices ns2d_turb lattice_ft \
-              pic_plasma graphene_tb wavepacket_scatt md_greenkubo bayesian_infer; do
+              pic_plasma graphene_tb wavepacket_scatt md_greenkubo bayesian_infer \
+              fgh_bound_states nfe_bands atomic_hf kmt_dynamics; do
     run "$name"
   done
   echo

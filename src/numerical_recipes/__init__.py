@@ -16,6 +16,8 @@ relevant conservation laws, and (c) it agrees with an independent reference
     thermal, acoustics, fluid, electrostatics.
   * ``spectral_fft``    -- FFT-based Poisson, split-operator Schrodinger,
     spectral time-stepping; EM, quantum, acoustics.
+  * ``grid_hamiltonian`` -- Fourier Grid Hamiltonian (FGH) bound states on a
+    grid: kinetic-energy matrix, H = KE + diag(V), normalisation.
   * ``mcmc_ising``      -- Metropolis and Wolff cluster Monte Carlo for the
     2D Ising model; the canonical phase-transition study.
   * ``stochastic``      -- Euler-Maruyama and Langevin dynamics; Brownian
@@ -38,6 +40,7 @@ from . import (
     ode_symplectic,
     pde_fdm,
     spectral_fft,
+    grid_hamiltonian,
     stochastic,
     verify,
 )
@@ -51,6 +54,7 @@ __all__ = [
     "ode_symplectic",
     "pde_fdm",
     "spectral_fft",
+    "grid_hamiltonian",
     "stochastic",
     "verify",
 ]

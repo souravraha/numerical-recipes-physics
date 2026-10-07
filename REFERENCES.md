@@ -69,6 +69,20 @@ this file is the consolidated, research-style bibliography.
   dependent Schrodinger equation," *Phys. Rep.* **194**, 195-241 (1990). --
   overview of spectral / split-operator time propagation.
 
+## `grid_hamiltonian` -- Fourier Grid Hamiltonian (FGH)
+
+- C. J. Umrigar, J. P. Duan, X. Wang, S. J. Kim, M. J. Hoffmann, "The
+  Fourier grid Hamiltonian method for bound state eigenvalues and
+  eigenfunctions," *J. Chem. Phys.* **91**, 3571-3581 (1989).
+  doi:10.1063/1.467409 -- the FGH method: the kinetic-energy operator built by
+  Fourier multipliers on a uniform grid (``KE = (hbar^2/2m) |k^2|``).
+- A. D. McRae, J. D. Dugger, "A comparison of the Fourier grid Hamiltonian
+  method and the Lanczos method for quantum mechanical bound states,"
+  *Chem. Phys. Lett.* **157**, 157-164 (1989). -- FGH accuracy for bound states.
+- M. D. Feit, F. A. Fleischer, A. Steyer, "Quantum mechanical propagation
+  using the splitting algorithm," *J. Chem. Phys.* **92**, 3955-3961 (1990).
+  -- grid-based radial Schrodinger problems.
+
 ## `mcmc_ising` -- Metropolis, Wolff, Onsager
 
 - N. Metropolis, A. W. Rosenbluth, M. N. Rosenbluth, A. H. Teller, E. Teller,
@@ -231,6 +245,45 @@ above into ten worked physics applications. Their subject-matter references:
 - C. M. Will, "Theoretical issues in gravitational-wave physics" (quasinormal
   modes / ringdown), *Living Rev. Relativity* **9**, 3 (2006). -- the damped
   oscillator model inferred in the case study.
+
+### `atlas.fgh_bound_states` -- FGH bound states (harmonic, well, H, central)
+
+- C. J. Umrigar et al., *J. Chem. Phys.* **91**, 3571 (1989). -- the FGH
+  bound-state solver used for all four cases.
+- C. Cohen-Tannoudji, B. Diu, F. Laloe, *Quantum Mechanics*, Wiley (1977).
+  -- the harmonic-oscillator, finite square-well, hydrogen, and 3D
+  harmonic-oscillator bound states used as independent references.
+
+### `atlas.nfe_bands` -- nearly-free-electron band structure (1D/2D)
+
+- C. Kittel, *Introduction to Solid State Physics*, 8th ed., Wiley (2005).
+  -- the nearly-free-electron band model and the gap at the Brillouin-zone
+  edge.
+- J. M. Ziman, *Principles of the Theory of Solids*, Cambridge University
+  Press (1964). -- the plane-wave expansion in a weak periodic potential.
+- N. W. Ashcroft, N. D. Mermin, *Solid State Physics*, Cengage (1976).
+
+### `atlas.atomic_hf` -- Hartree (He) & Hartree-Fock (Be) ground states
+
+- R. P. Feynman, "Evidence for gas-liquid phase transition in He-4,"
+  *Phys. Rev.* **56**, 340-341 (1939). doi:10.1103/PhysRev.56.340 -- the
+  helium total energy.
+- B. Roothaan, "Improvement in the electronic wave functions of complex
+  atoms," *Rev. Mod. Phys.* **23**, 69-90 (1951). doi:10.1103/RevModPhys.23.69
+  -- the Roothaan (matrix) Hartree-Fock equations.
+- E. Clementi, C. Raimondi, "Wave functions for many-electron atoms,"
+  *Rev. Mod. Phys.* **35**, 962-1002 (1963). doi:10.1103/RevModPhys.35.962
+  -- Slater-type orbitals and the Clementi exponents used for beryllium.
+
+### `atlas.kmt_dynamics` -- stochastic kinetochore-microtubule dynamics
+
+- T. J. Mitchison, M. K. O. Smith, "Microtubule dynamics in cell division,"
+  *Science* **257**, 407-415 (1992). doi:10.1126/science.1575191 -- microtubule
+  dynamic instability (the polymerisation/depolymerisation the model captures).
+- A. A. Hyman, "Regulation of microtubule dynamics," *Cold Spring Harbor
+  Perspect. Biol.* (kinetochore-microtubule coupling under mechanical load).
+- The specific stochastic rate scheme is ported from an M.Sc. computational
+  physics project (IIT Kanpur); parameters are in the original's arbitrary units.
 
 ## General / companion texts
 

@@ -29,6 +29,7 @@ each module can spend its lines on the physics rather than the bookkeeping.
 | `linalg_eig` | Householder tridiagonalisation, Sturm bisection, inverse iteration, Lanczos | quantum wells, phonon chains, stiffness spectra |
 | `pde_fdm` | finite differences: heat, wave, advection, Poisson | thermal, acoustics, fluid, electrostatics |
 | `spectral_fft` | FFT Poisson, split-operator Schrodinger, spectral stepping | EM, quantum, acoustics |
+| `grid_hamiltonian` | Fourier Grid Hamiltonian: kinetic matrix, `H = KE + diag(V)`, normalisation | quantum bound states (harmonic, well, hydrogen, central) |
 | `mcmc_ising` | Metropolis and Wolff cluster Monte Carlo | the 2D Ising phase transition |
 | `stochastic` | Euler-Maruyama, Langevin (Bao-Wu) | Brownian motion, thermostats, Ornstein-Uhlenbeck |
 | `minimization` | gradient descent, Newton, BFGS, Nelder-Mead | molecular ground states, data fitting |
@@ -39,7 +40,7 @@ to a single unit system.
 ## The atlas -- flagship case studies
 
 On top of the primitives, [`src/numerical_recipes/atlas/`](src/numerical_recipes/atlas/)
-is a subpackage of ten **worked physics applications**. Each one composes the
+is a subpackage of fourteen **worked physics applications**. Each one composes the
 shared routines above into a real simulation and is checked the same way --
 convergence, conservation, and an independent analytic reference. Nothing is
 re-implemented; every project imports the foundational modules.
@@ -56,6 +57,10 @@ re-implemented; every project imports the foundational modules.
 | `wavepacket_scatt` | Quantum wave-packet scattering, `T + R = 1` | `spectral_fft` (split-operator) |
 | `md_greenkubo` | Molecular dynamics + Green-Kubo / Einstein diffusion | `ode_symplectic` (velocity-Verlet), `stochastic` |
 | `bayesian_infer` | Bayesian MCMC inference on a damped-oscillator fit | `mcmc` (HMC), `minimization` (BFGS/Nelder-Mead) |
+| `fgh_bound_states` | FGH bound states: harmonic, square well, H 1s, central | `grid_hamiltonian` (FGH) + brentq (reference) |
+| `nfe_bands` | Nearly-free-electron band structure (1D/2D) | NumPy eigensolve (plane-wave) |
+| `atomic_hf` | Hartree (He) & Hartree-Fock (Be) ground states | `grid_hamiltonian` (radial KE) + SciPy (Be Fock) |
+| `kmt_dynamics` | Stochastic kinetochore-microtubule dynamics | NumPy linear solve + RNG (self-contained) |
 
 Run any single study headlessly (plots go to `output/`):
 
@@ -76,7 +81,7 @@ pixi install
 # run the full verification-first test suite
 pixi run test
 
-# run the ten atlas case studies (figures -> output/)
+# run the fourteen atlas case studies (figures -> output/)
 pixi run examples
 ```
 
@@ -118,7 +123,7 @@ From the repository root, after activating the Python environment
 make test      # run the C and Python test suites together (default)
 make c-test    # C port only            (c/)
 make py-test   # Python package only    (src/ + tests/)
-make examples  # run the ten atlas case studies (figures -> output/)
+make examples  # run the fourteen atlas case studies (figures -> output/)
 make clean     # remove C build artifacts (c/build/)
 ```
 

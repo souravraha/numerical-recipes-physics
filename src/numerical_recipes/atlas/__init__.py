@@ -1,4 +1,4 @@
-"""Case-study "atlas": ten flagship computational-physics applications built
+"""Case-study "atlas": fourteen flagship computational-physics applications built
 entirely from the foundational ``numerical_recipes`` routines.
 
 Each module is a self-contained, verification-first worked example of a real
@@ -20,6 +20,10 @@ Modules
   * wavepacket_scatt -- quantum wave-packet scattering (T/R, unitarity).
   * md_greenkubo     -- molecular dynamics + Green-Kubo / Einstein transport.
   * bayesian_infer   -- Bayesian MCMC inference on a real physics problem.
+  * fgh_bound_states -- FGH bound states: harmonic, square well, H, central.
+  * nfe_bands        -- nearly-free-electron band structure (1D/2D).
+  * atomic_hf        -- Hartree (He) and Hartree-Fock (Be) ground states.
+  * kmt_dynamics     -- stochastic kinetochore-microtubule dynamics.
 
 Import a module directly, e.g.  ``from numerical_recipes.atlas import bh_shadow``.
 """
@@ -35,4 +39,8 @@ __all__ = [
     "wavepacket_scatt",
     "md_greenkubo",
     "bayesian_infer",
+    "fgh_bound_states",
+    "nfe_bands",
+    "atomic_hf",
+    "kmt_dynamics",
 ]
