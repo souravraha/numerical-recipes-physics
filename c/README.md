@@ -1,6 +1,6 @@
 # C port
 
-A from-scratch **C11** port of every `numerical_recipes` module -- the same
+A from-scratch **C11** port of the `numerical_recipes` modules (`grid_hamiltonian` is Python-only) -- the same
 verification-first tests and the same hand-rolled algorithms, with no dependency
 beyond the C standard library and `-lm` (no NumPy, FFTW, or BLAS).
 

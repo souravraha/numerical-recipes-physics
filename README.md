@@ -30,6 +30,7 @@ each module can spend its lines on the physics rather than the bookkeeping.
 | `pde_fdm` | finite differences: heat, wave, advection, Poisson | thermal, acoustics, fluid, electrostatics |
 | `spectral_fft` | FFT Poisson, split-operator Schrodinger, spectral stepping | EM, quantum, acoustics |
 | `grid_hamiltonian` | Fourier Grid Hamiltonian: kinetic matrix, `H = KE + diag(V)`, normalisation | quantum bound states (harmonic, well, hydrogen, central) |
+| `mcmc` | Metropolis-Hastings, HMC (leapfrog), autocorrelation / ESS, Gelman-Rubin | Bayesian inference, general target sampling |
 | `mcmc_ising` | Metropolis and Wolff cluster Monte Carlo | the 2D Ising phase transition |
 | `stochastic` | Euler-Maruyama, Langevin (Bao-Wu) | Brownian motion, thermostats, Ornstein-Uhlenbeck |
 | `minimization` | gradient descent, Newton, BFGS, Nelder-Mead | molecular ground states, data fitting |
@@ -68,7 +69,6 @@ Run any single study headlessly (plots go to `output/`):
 python -m examples.bh_shadow        # or: ./examples/run_examples.sh
 ```
 
-## Get started
 ## Get started
 
 The environment is managed with [Pixi](https://pixi.sh) (conda-forge
@@ -110,8 +110,8 @@ make clean     # wipe build/
 Built with `-std=c11 -O2 -Wall -Wextra`. Conventions: row-major `double`
 arrays; the caller supplies output buffers (optional history/trajectory buffers
 are nullable); callbacks carry a `void *ud` payload; complex data uses C99
-`double complex`. All nine physics modules plus `verify` are ported, with
-`common` holding the shared matrix helpers and RNG.
+`double complex`. Every module except `grid_hamiltonian` (Python-only) is
+ported, plus `verify`; `common` holds the shared matrix helpers and RNG.
 
 ## Development
 
